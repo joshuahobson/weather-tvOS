@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		2F0ABA7621233CB200894B11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ABA7521233CB200894B11 /* AppDelegate.swift */; };
-		2F0ABA7821233CB200894B11 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ABA7721233CB200894B11 /* FirstViewController.swift */; };
-		2F0ABA7A21233CB200894B11 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ABA7921233CB200894B11 /* SecondViewController.swift */; };
 		2F0ABA7D21233CB200894B11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0ABA7B21233CB200894B11 /* Main.storyboard */; };
 		2F0ABA7F21233CB300894B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0ABA7E21233CB300894B11 /* Assets.xcassets */; };
+		2F0ABA8B2123402800894B11 /* snow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2F0ABA862123402800894B11 /* snow.mp4 */; };
+		2F0ABA8C2123402800894B11 /* cloudy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2F0ABA872123402800894B11 /* cloudy.mp4 */; };
+		2F0ABA8D2123402800894B11 /* storm.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2F0ABA882123402800894B11 /* storm.mp4 */; };
+		2F0ABA8E2123402800894B11 /* sun.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2F0ABA892123402800894B11 /* sun.mp4 */; };
+		2F0ABA8F2123402800894B11 /* rain.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2F0ABA8A2123402800894B11 /* rain.mp4 */; };
+		2F0ABA92212345D600894B11 /* YourLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ABA91212345D600894B11 /* YourLocationViewController.swift */; };
+		2F0ABA942123461800894B11 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ABA932123461800894B11 /* SearchTableViewController.swift */; };
+		2F0ABA962123462B00894B11 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ABA952123462B00894B11 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F0ABA7221233CB200894B11 /* weather-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0ABA7521233CB200894B11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F0ABA7721233CB200894B11 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		2F0ABA7921233CB200894B11 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2F0ABA7C21233CB200894B11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F0ABA7E21233CB300894B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F0ABA8021233CB300894B11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F0ABA862123402800894B11 /* snow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = snow.mp4; sourceTree = "<group>"; };
+		2F0ABA872123402800894B11 /* cloudy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cloudy.mp4; sourceTree = "<group>"; };
+		2F0ABA882123402800894B11 /* storm.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = storm.mp4; sourceTree = "<group>"; };
+		2F0ABA892123402800894B11 /* sun.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sun.mp4; sourceTree = "<group>"; };
+		2F0ABA8A2123402800894B11 /* rain.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain.mp4; sourceTree = "<group>"; };
+		2F0ABA91212345D600894B11 /* YourLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourLocationViewController.swift; sourceTree = "<group>"; };
+		2F0ABA932123461800894B11 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		2F0ABA952123462B00894B11 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +66,28 @@
 		2F0ABA7421233CB200894B11 /* weather-tvOS */ = {
 			isa = PBXGroup;
 			children = (
+				2F0ABA902123408B00894B11 /* videos */,
 				2F0ABA7521233CB200894B11 /* AppDelegate.swift */,
-				2F0ABA7721233CB200894B11 /* FirstViewController.swift */,
-				2F0ABA7921233CB200894B11 /* SecondViewController.swift */,
+				2F0ABA91212345D600894B11 /* YourLocationViewController.swift */,
+				2F0ABA932123461800894B11 /* SearchTableViewController.swift */,
+				2F0ABA952123462B00894B11 /* DetailViewController.swift */,
 				2F0ABA7B21233CB200894B11 /* Main.storyboard */,
 				2F0ABA7E21233CB300894B11 /* Assets.xcassets */,
 				2F0ABA8021233CB300894B11 /* Info.plist */,
 			);
 			path = "weather-tvOS";
+			sourceTree = "<group>";
+		};
+		2F0ABA902123408B00894B11 /* videos */ = {
+			isa = PBXGroup;
+			children = (
+				2F0ABA872123402800894B11 /* cloudy.mp4 */,
+				2F0ABA8A2123402800894B11 /* rain.mp4 */,
+				2F0ABA862123402800894B11 /* snow.mp4 */,
+				2F0ABA882123402800894B11 /* storm.mp4 */,
+				2F0ABA892123402800894B11 /* sun.mp4 */,
+			);
+			path = videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,8 +148,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0ABA8E2123402800894B11 /* sun.mp4 in Resources */,
 				2F0ABA7F21233CB300894B11 /* Assets.xcassets in Resources */,
+				2F0ABA8C2123402800894B11 /* cloudy.mp4 in Resources */,
+				2F0ABA8F2123402800894B11 /* rain.mp4 in Resources */,
+				2F0ABA8B2123402800894B11 /* snow.mp4 in Resources */,
 				2F0ABA7D21233CB200894B11 /* Main.storyboard in Resources */,
+				2F0ABA8D2123402800894B11 /* storm.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,9 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F0ABA7A21233CB200894B11 /* SecondViewController.swift in Sources */,
+				2F0ABA92212345D600894B11 /* YourLocationViewController.swift in Sources */,
+				2F0ABA942123461800894B11 /* SearchTableViewController.swift in Sources */,
 				2F0ABA7621233CB200894B11 /* AppDelegate.swift in Sources */,
-				2F0ABA7821233CB200894B11 /* FirstViewController.swift in Sources */,
+				2F0ABA962123462B00894B11 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
