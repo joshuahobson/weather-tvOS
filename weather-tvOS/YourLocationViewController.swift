@@ -39,6 +39,7 @@ class YourLocationViewController: UIViewController, CLLocationManagerDelegate {
         initVideoBackground()
         setupLocationServices()
         getDate()
+            parseURL(theURL: "http://api.openweathermap.org/data/2.5/weather?id=4671654&APPID=6405ec41613215f96ca82fb232a56f9f&units=imperial")
         
     }
 
@@ -140,7 +141,7 @@ class YourLocationViewController: UIViewController, CLLocationManagerDelegate {
                     }
                 }
             })
-            getWeatherForLocation(location: locationObject, andForecastIndex: 0)
+           // getWeatherForLocation(location: locationObject, andForecastIndex: 0)
 
         }
         
@@ -149,19 +150,115 @@ class YourLocationViewController: UIViewController, CLLocationManagerDelegate {
         
     
     //MARK: - Weather
+ 
     
-    func getWeatherForLocation (location:CLLocation, andForecastIndex index:Int){
+    
+    func parseURL(theURL:String){
+       
         
-        WeatherManager.weatherForLocation(location: location) {
+        let url = URL(string: theURL)
+        URLSession.shared.dataTask(with: url!) {(data, response, error) in
+            if error != nil {
+                print("did not work, \(String(describing: error))")
             
-            (dataArray:[WeatherData]?) in
-            
-            if let weatherData = dataArray {
-                self.weatherArray = weatherData
-                print(self.weatherArray)
+                DispatchQueue.main.asyncAfter(deadline: .now() ){
+                    // just deal
+                }
+                
+            } else {
+                
+                do {
+                    let parsedData = try JSONSerialization.jsonObject(with: data!) as! [String:Any]
+                    
+                    //var i:Int = 0
+                    
+                    for (key, value) in parsedData{
+                        /*print(" \(i) ")
+                        print("  ")
+                        print(" \(key) --- \(value)")
+                        print("  ")
+                        i += 1
+                       */
+                        
+                        if (key == "main"){
+                            if let tempArray:[String:Any] = value as? [String:Any] {
+                                print("is temp ")
+                                
+                                    for (key, value) in tempArray{
+                                        if (key == "temp"){
+                                            //print("the temp is \(value)")
+                                            let theTemp = value
+                                            let formatter = NumberFormatter()
+                                            formatter.numberStyle = .decimal
+                                            formatter.maximumFractionDigits = 0
+                                            let formattedAmount = formatter.string(from: theTemp as! NSNumber)!
+                                            
+                                            print(formattedAmount) // 10
+                                            
+                                            DispatchQueue.main.async {
+                                                self.tempLabel.text = "\(formattedAmount)ºF"                           }
+                                        }
+                                        
+                                }
+                                
+                            
+                            }
+                        }
+                        
+                        
+                        
+                        if (key == "weather"){
+                            if let weatherArray:[[String:Any]] = value as? [[String:Any]] {
+                                
+                                for dict in weatherArray{
+                                    for (key, value) in dict{
+                                        if (key == "main"){
+                                            print(value)
+                                            
+                                        } else if (key == "description"){
+                                            print(value)
+                                            DispatchQueue.main.async {
+                                                // just deal
+                                                self.summaryLabel.text = value as? String                                            }
+                                            
+                                            
+                                        }
+                                    }
+                                }
+                                
+                                
+                            }
+                        }
+                        
+                    
+                        
+                        
+                    }
+                    
+                } catch let error as NSError{
+                    print(error)
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        //just deal again
+                    }
+                }
+                
             }
             
-        }
+        } .resume()
+        
+    }// end of func
+
+    
+    
+    
+    
+    
+    
+    
+    func getWeatherForLocation (location:CLLocation, andForecastIndex index:Int){
+
+        
+    
         
     }
     

@@ -24,6 +24,19 @@
 		2F0ABA9F2123484300894B11 /* ECWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ABA9B2123484300894B11 /* ECWeather.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2F0ABAA321238FBD00894B11 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2F0ABA7221233CB200894B11 /* weather-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0ABA7521233CB200894B11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,8 +71,8 @@
 		2F0ABA6921233CB200894B11 = {
 			isa = PBXGroup;
 			children = (
-				2F0ABA7421233CB200894B11 /* weather-tvOS */,
 				2F0ABA7321233CB200894B11 /* Products */,
+				2F0ABA7421233CB200894B11 /* weather-tvOS */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +133,8 @@
 				2F0ABA6E21233CB200894B11 /* Sources */,
 				2F0ABA6F21233CB200894B11 /* Frameworks */,
 				2F0ABA7021233CB200894B11 /* Resources */,
+				2F0ABAA321238FBD00894B11 /* Embed Frameworks */,
+				2F0ABAEE2124779500894B11 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -179,6 +194,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F0ABAEE2124779500894B11 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "Shell /bin/sh\n\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Frameworks/AerisCore.framework/strip-frameworks.sh\"\n\nShow environment variables in build log: Checked\nRun script only when installing: Not checked\n\nInput Files: Empty\nOutput Files: Empty";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F0ABA6E21233CB200894B11 /* Sources */ = {
@@ -328,6 +359,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "weather-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -346,6 +381,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "weather-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
